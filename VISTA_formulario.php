@@ -16,6 +16,14 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+
+    <script type="text/javascript">
+      function formReset()
+      {
+        document.getElementById("miform").reset();
+      }
+    </script>
+
   </head>
   <body>
     
@@ -30,13 +38,13 @@
               <h3 class="panel-title">Bienvenido al Formulario</h3>
             </div>
             <div class="panel-body">
-              <form class="form-horizontal" method="POST" action="controlador.php">
+              <form class="form-horizontal" method="POST" action="controlador.php" id="miform">
                 <fieldset>
 
                   <div class="form-group">
                     <label for="focusedInput" class="col-lg-4 control-label">Nombre y Apellido</label>
                     <div class="col-lg-8">
-                      <input class="form-control" style="text-align: center;" id="focusedInput" type="text" placeholder="Nombre Apellido">
+                      <input class="form-control" style="text-align: center;" id="focusedInput" type="text" name="nombre" placeholder="Nombre Apellido">
                     </div>
                   </div>
 
@@ -46,7 +54,7 @@
                     <div class="form-group">
                       <label for="focusedInput2" class="col-lg-4 control-label">Edad</label>
                       <div class="col-lg-8">
-                        <input class="form-control" style="text-align: center;" id="focusedInput2" type="numeric" placeholder="Edad">
+                        <input class="form-control" style="text-align: center;" id="focusedInput2" type="numeric" name="edad" placeholder="Edad">
                       </div>
                     </div>
                     </div>
@@ -55,7 +63,7 @@
                     <div class="form-group">
                       <label for="select" class="col-lg-4 control-label">Pais</label>
                       <div class="col-lg-8">
-                        <select class="form-control" id="select" >
+                        <select class="form-control" id="select" name="pais" >
 
                           <?php foreach ($paises as $pais): ?>
 
@@ -72,7 +80,7 @@
 
                   <div class="form-group">
                     <div class="col-lg-10 col-lg-offset-4">
-                      <button type="reset" class="btn btn-default">Limpiar</button>
+                      <button onclick="formReset()" value="Reset" type="reset" class="btn btn-default">Limpiar</button>
                       <button type="submit" class="btn btn-primary">Enviar</button>
                     </div>
                   </div>
